@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshanikanta Behera | Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Darshanikanta
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="greeting">Hello, I'm</span>
+                <h1 class="glitch" data-text="Darshanikanta Behera">Darshanikanta Behera</h1>
+                <h2 class="typing-text">I am a <span class="dynamic-role"></span></h2>
+                <p>Data Scientist and AI/ML Enthusiast transforming data into actionable insights through analytics,
+                    machine learning, and visualization.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+                <div class="social-links-hero">
+                    <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="social-icon"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Darshanikant" target="_blank" class="social-icon"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/darshanikant007/" target="_blank" class="social-icon"><i
+                            class="fa-brands fa-instagram"></i></a> 
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="img-wrapper">
+                    <img src="Darshani img.jpg" alt="Darshanikanta Behera">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section hidden">
+        <div class="container">
+            <h2 class="section-title" data-heading="About Me">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a passionate Data Scientist and AI/ML Enthusiast with hands-on experience in transforming
+                        data into actionable insights.
+                        My expertise spans analytics, machine learning, and visualization. I am proficient in Python,
+                        SQL, and Power BI,
+                        and have experience building predictive models and AI-powered applications using tools like
+                        LangChain and Hugging Face.
+                    </p>
+                    <p>
+                        I am dedicated to solving real-world problems through data-driven decision-making and continuous
+                        learning.
+                        I regularly integrate AI tools into my workflow to enhance productivity and efficiency.
+                    </p>
+
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="label">Email</span>
+                            <span class="value">darshanikanta@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Phone</span>
+                            <span class="value">+91 7894191488</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Location</span>
+                            <span class="value">Hyderabad, Telangana</span>
+                        </div>
+                    </div>
+
+                    <div class="education-box hidden">
+                        <h3 class="box-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <h4>Bachelor of Science (IT & Management)</h4>
+                            <p>Fakir Mohan University, Balasore | 2021 - 2024</p>
+                        </div>
+                        <div class="edu-item">
+                            <h4>Intermediate (Science)</h4>
+                            <p>Saheed Higher Secondary School, Barapur, Bhadrak | 2019 - 2021</p>
+                        </div>
+                        <div class="edu-item">
+                            <h4>BSE 10th</h4>
+                            <p>Bagudi Nodal High School, Bagudi, Soro, Balaswer | 2018 - 2019</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <a href="Darshanikanta's Resume.pdf" download class="btn btn-primary">Download Resume <i
+                            class="fa-solid fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section hidden">
+        <div class="container">
+            <h2 class="section-title" data-heading="Experience">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item hidden">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Science Mentor</h3>
+                            <span class="date">Mar 2025 – Present</span>
+                        </div>
+                        <span class="company">Naresh iTechnology, Hyderabad</span>
+                        <ul>
+                            <li>Mentored 50+ students in Python, ML, EDA, PowerBI, and Data Visualization.</li>
+                            <li>Guided project development and model optimization for data science learners.</li>
+                            <li>Enhanced curriculum modules to include Data Science and Data Analytics.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item hidden">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>AI Trainee</h3>
+                            <span class="date">July 2025 – Sep 2025</span>
+                        </div>
+                        <span class="company">Infosys, Bhubaneswar, Odisha</span>
+                        <ul>
+                            <li>Trained in ML model development, NLP applications, and Data Preparation.</li>
+                            <li>Collaborated using Agile methodology to build and evaluate AI models.</li>
+                            <li>Gained exposure to corporate coding standards and Deployment principles.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section hidden">
+    <div class="container">
+        <h2 class="section-title" data-heading="Skills">Technical Skills</h2>
+        <div class="skills-grid">
+
+            <!-- Programming Core -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-brands fa-python"></i>
+                </div>
+                <h3>Core Programming</h3>
+                <p>Python, MySQL, Data Structures, OOPs</p>
+            </div>
+
+            <!-- Python Libraries -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Python Libraries</h3>
+                <p>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Linear Regression, Logistic Regression, Decision Trees, Random Forest, SVM, KNN,Ridge, Lasso, Naive Bayes, XGBoost, Hyperparameter Tuning</p>
+            </div>
+
+            <!-- Deep Learning -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h3>Deep Learning</h3>
+                <p>ANN, CNN, RNN, LSTM, GRU, TensorFlow, Keras, PyTorch, Optimizers, Loss Functions, Activation Functions</p>
+            </div>
+
+            <!-- NLP -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3>Natural Language Processing (NLP)</h3>
+                <p>Text Preprocessing, Tokenization, Lemmatization, Stemming, NER, POS Tagging, TF-IDF, Word2Vec, GloVe</p>
+            </div>
+
+            <!-- LLM & Generative AI -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3>LLM & Generative AI</h3>
+                <p>Prompt Engineering, Google Gemini API, OpenAI API, Hugging Face Transformers, Fine-tuning, Agents, Langchain, LLM</p>
+            </div>
+
+            <!-- RAG -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <h3>Retrieval-Augmented Generation (RAG)</h3>
+                <p>LangChain, FAISS, Vector Embeddings, Document Chunking, Similarity Search</p>
+            </div>
+
+            <!-- Power BI -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Power BI</h3>
+                <p>DAX, Power Query, Data Modeling, Interactive Dashboards, ETL</p>
+            </div>
+
+            <!-- Deployment & Tools -->
+            <div class="skill-card hidden">
+                <div class="skill-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h3>Deployment & Tools</h3>
+                <p>Streamlit, FastAPI, Docker, Git, GitHub, VS Code, Anaconda</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="projects" class="section hidden">
+        <div class="container">
+            <h2 class="section-title" data-heading="Projects">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Adult Income Rate Analysis</h3>
+                        <p>Income classification using demographic data to predict earnings >$50K. End-to-end
+                            preprocessing, EDA, and evaluation of Random Forest, XGBoost, and CatBoost models.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>EDA</span>
+                            <span>Preprocessing</span> 
+                            <span>LightGBM</span>
+                            <span>Catboost</span>  
+                            <span>XGBoost</span>
+                            
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Adult_Data_Analysis" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-head-side-virus"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mental Health Detection (NLP)</h3>
+                        <p>Text classifier detecting mental health indicators from 10k+ samples. Built pipeline with
+                            TF-IDF, NLTK, and Logistic Regression achieving 86% accuracy.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>NLTK</span>
+                            <span>TF-IDF</span>
+                            <span>Logistic Regression</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Mental_Health_Detection-NLP-ML-" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RAG-Based Q&A System</h3>
+                        <p>End-to-end Retrieval-Augmented Generation system using Gemini LLM, LangChain, and FAISS.
+                            Features document parsing, semantic search, and contextual responses.</p>
+                        <div class="tags">
+                            <span>LLM</span>
+                            <span>LangChain</span>
+                            <span>Gemini</span>
+                            <span>FAISS</span>
+                            <span>Embeddings</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/RAG-Retrieval-Augmented-Generation-" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                 
+                <!--Project 4 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Stock Market Prediction</h3>
+                        <p>Time-series stock price prediction using LSTM. Implemented technical indicators like Moving Averages and RSI with data preprocessing and visualization.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Data Preprocessing</span>
+                            <span>LSTM</span>
+                            <span>Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Stock_Price_Prediction" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--Project 5 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-table"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CSV Chat Assistant</h3>
+                        <p>Built an intelligent assistant to chat with CSV data using LangChain, enabling natural language querying over datasets.</p>
+                        <div class="tags">
+                            <span>LangChain Agents</span>
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>CSV Data</span>  
+                            <span>Data Q&A</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://dataanalysisagent-hif7oryhb5m9xjtjbui5gp.streamlit.app/" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Project 6 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Netflix Power BI Dashboard</h3>
+                        <p>Interactive business intelligence dashboard analyzing Netflix data using DAX and Power Query.</p>
+                        <div class="tags">
+                            <span>Power BI</span>
+                            <span>Cleaning</span>
+                            <span>Transforming</span>
+                            <span>Modeling</span>
+                            <span>DAX</span>
+                            <span>Data Modeling</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiY2VmOWVmY2QtN2Y0YS00M2I0LTk5NDktNjdmODUwNjVkZWI2IiwidCI6IjBmN2I4ODE4LTM0MDktNDU0OC1hZDZhLTU5ZDRlZDI5ODRmYyJ9" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Project 7 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Email Spam Classifier</h3>
+                        <p>ML model to classify emails as spam or ham using NLP techniques and supervised learning algorithms.</p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>NLP</span>
+                            <span>Classification</span>
+                            <span>Streamlit</span>
+                            <span>Data Preprocessing</span> 
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Email_Classifier" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--Project 8 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-robot"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Multi-Assistant AI</h3>
+                        <p>
+                            A multi-functional AI assistant capable of handling tasks like conversation, automation,
+                            document understanding, and intelligent responses using modern AI frameworks.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Generative AI</span>
+                            <span>Gemini API</span>
+                            <span>LangChain</span>
+                            <span>Prompt Engineering</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Multi-Assistant" class="btn-sm" target="_blank">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--Project 9 -->
+                <div class="project-card hidden">
+                    <div class="project-img">
+                        <i class="fa-solid fa-car-side"></i>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Vehicle Speed Recognition System</h3>
+                        <p>
+                            Video-based vehicle detection and speed estimation system using object detection & tracking, frame processing and speed calculation logic.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>Computer Vision</span>
+                            <span>Video Processing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Darshanikant/Vehicle_speed_Recognition" class="btn-sm" target="_blank">
+                                View Project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section hidden">
+        <div class="container">
+            <h2 class="section-title" data-heading="Certifications">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>Generative AI Professional</h4>
+                        <p>Oracle (2025)</p>
+                    </div>
+                </div>
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>NLP for Developers</h4>
+                        <p>Infosys (2025)</p>
+                    </div>
+                </div>
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>Prompt Engineering & LLM</h4>
+                        <p>Infosys (2025)</p>
+                    </div>
+                </div>  
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>Full Stack Data Science & AI</h4>
+                        <p>Naresh iTechnologies (2024-2025)</p>
+                    </div>
+                </div>
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>Data Science</h4>
+                        <p>Microsoft (2023)</p>
+                    </div>
+                </div>
+                <div class="cert-card hidden">
+                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-details">
+                        <h4>Python for Data Science</h4>
+                        <p>GUVI (2023)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section bg-light hidden">
+        <div class="container">
+            <h2 class="section-title" data-heading="Contact">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>darshanikanta@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 7894191488</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Darshanikant" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/darshanikant007/" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-instagram"></i></a> 
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/moverdez" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message <i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Darshanikanta Behera. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
