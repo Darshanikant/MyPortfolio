@@ -1,487 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darshanikanta Behera | Data Scientist Portfolio</title>
+    <title>Darshanikanta Behera | Gen AI Engineer & Data Scientist</title>
+    <meta name="description" content="Portfolio of Darshanikanta Behera — Generative AI Engineer and Data Scientist specializing in LLMs, Multi-Agent Systems, and RAG pipelines.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
     <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
 
-    <!-- Particle Background -->
-    <canvas id="particles-canvas"></canvas>
+    <!-- WebGL Background -->
+    <div id="canvas-container"></div>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Darshanikanta
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-name">DK</span>
+                <span class="logo-bracket">]</span>
+                <span class="logo-tag">// gen-ai-eng</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link" data-text="Home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <div class="ai-status-badge">
+                    <span class="ai-dot"></span>
+                    <span class="ai-status-text">Available</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="greeting">Hello, I'm</span>
-                <h1 class="glitch" data-text="Darshanikanta Behera">Darshanikanta Behera</h1>
-                <h2 class="typing-text">I am a <span class="dynamic-role"></span></h2>
-                <p>Data Scientist and AI/ML Enthusiast transforming data into actionable insights through analytics,
-                    machine learning, and visualization.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#projects" class="btn btn-secondary">View Work</a>
-                </div>
-                <div class="social-links-hero">
-                    <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="social-icon"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Darshanikant" target="_blank" class="social-icon"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/darshanikant007/" target="_blank" class="social-icon"><i
-                            class="fa-brands fa-instagram"></i></a> 
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="img-wrapper">
-                    <img src="Darshani img.jpg" alt="Darshanikanta Behera">
-                </div>
-            </div>
+    <!-- HERO -->
+    <section id="home" class="hero" data-shape="brain">
+        <!-- Floating Code Fragments -->
+        <div class="code-fragments" aria-hidden="true">
+            <span class="cf cf-1">import openai</span>
+            <span class="cf cf-2">{"model": "gpt-4o"}</span>
+            <span class="cf cf-3">RAG_pipeline()</span>
+            <span class="cf cf-4">@agent.tool</span>
+            <span class="cf cf-5">vector_store.search()</span>
+            <span class="cf cf-6">llm.invoke(prompt)</span>
         </div>
-    </section>
 
-    <section id="about" class="section hidden">
-        <div class="container">
-            <h2 class="section-title" data-heading="About Me">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a passionate Data Scientist and AI/ML Enthusiast with hands-on experience in transforming
-                        data into actionable insights.
-                        My expertise spans analytics, machine learning, and visualization. I am proficient in Python,
-                        SQL, and Power BI,
-                        and have experience building predictive models and AI-powered applications using tools like
-                        LangChain and Hugging Face.
-                    </p>
-                    <p>
-                        I am dedicated to solving real-world problems through data-driven decision-making and continuous
-                        learning.
-                        I regularly integrate AI tools into my workflow to enhance productivity and efficiency.
-                    </p>
+        <div class="hero-grid">
+            <div class="hero-left">
+                <!-- Token Stream Badge -->
+                <div class="token-stream">
+                    <span class="token token-blue">&lt;GenAI&gt;</span>
+                    <span class="token token-white">Engineer</span>
+                    <span class="token token-green">at_scale</span>
+                    <span class="token token-pink">•</span>
+                    <span class="token token-yellow">available</span>
+                </div>
 
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <span class="label">Email</span>
-                            <span class="value">darshanikanta@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Phone</span>
-                            <span class="value">+91 xxxxxxxx88</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Location</span>
-                            <span class="value">Hyderabad, Telangana</span>
-                        </div>
+                <div class="hero-greeting">Hello, I'm</div>
+                <h1 class="hero-name glitch" data-text="Darshanikanta Behera">
+                    Darshanikanta<br><span class="name-highlight">Behera</span>
+                </h1>
+
+                <div class="hero-role-wrap">
+                    <span class="role-prefix">→ </span>
+                    <span class="dynamic-role" id="dynamic-role"></span>
+                    <span class="role-cursor">|</span>
+                </div>
+
+                <p class="hero-bio">
+                    Building production-grade <span class="bio-accent">AI systems</span> using LLMs, Multi-Agent architectures, and advanced RAG pipelines. Currently engineering intelligent clinical automation at <span class="bio-highlight">Clinion</span>.
+                </p>
+
+                <!-- Stat Chips -->
+                <div class="hero-stats">
+                    <div class="stat-chip">
+                        <span class="stat-val">3+</span>
+                        <span class="stat-label">Roles</span>
                     </div>
-
-                    <div class="education-box hidden">
-                        <h3 class="box-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-                        <div class="edu-item">
-                            <h4>Bachelor of Science (IT & Management)</h4>
-                            <p>Fakir Mohan University, Balasore | 2021 - 2024</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>Intermediate (Science)</h4>
-                            <p>Saheed Higher Secondary School, Barapur, Bhadrak | 2019 - 2021</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>BSE 10th</h4>
-                            <p>Bagudi Nodal High School, Bagudi, Soro, Balaswer | 2018 - 2019</p>
-                        </div>
+                    <div class="stat-chip">
+                        <span class="stat-val">6+</span>
+                        <span class="stat-label">Projects</span>
                     </div>
+                    <div class="stat-chip">
+                        <span class="stat-val">50+</span>
+                        <span class="stat-label">Students Mentored</span>
+                    </div>
+                </div>
 
-                    <br>
-                    <a href="Darshanikanta's Resume.pdf" download class="btn btn-primary">Download Resume <i
-                            class="fa-solid fa-download"></i></a>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn-glow">
+                        <span>View Projects</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn-outline">
+                        <i class="fa-solid fa-satellite-dish"></i>
+                        <span>Hire Me</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="social-pill">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Darshanikant" target="_blank" class="social-pill">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="experience" class="section hidden">
-        <div class="container">
-            <h2 class="section-title" data-heading="Experience">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item hidden">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Gen AI Intern (J. Data Scientist)</h3>
-                            <span class="date">Dec 2025 – Present</span>
+            <div class="hero-right">
+                <!-- AI Model Card -->
+                <div class="ai-model-card tilt-card" data-tilt>
+                    <div class="model-card-header">
+                        <div class="model-card-glow"></div>
+                        <div class="model-status">
+                            <span class="model-dot"></span>
+                            <span class="mono-sm">MODEL ACTIVE</span>
                         </div>
-                        <span class="company">Clinion, Hyderabad, Talengana</span>
-                        <ul>
-                            <li>Working on internal application module by adding the AI tools to reduce the work time </li>
-                            <li>Collaborated with the teams using Agile methodology to to implements the AI models.</li>
-                            <li>Gained exposure to corporate coding standards and Deployment principles.</li>
-                            <li>Work in Diff. Tech stacks to build QA Bot With file handeling capabilities.</li>
-                            <li>Generating Case Report Form from the Protocol by using Advanced RAG System.</li>
-                        </ul>
+                        <div class="model-name mono-sm">darshani-v1.0</div>
                     </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Data Science Mentor</h3>
-                            <span class="date">Mar 2025 – Dec 2025</span>
-                        </div>
-                        <span class="company">Naresh iTechnology, Hyderabad</span>
-                        <ul>
-                            <li>Mentored 50+ students in Python, ML, EDA, PowerBI, and Data Visualization.</li>
-                            <li>Guided project development and model optimization for data science learners.</li>
-                            <li>Enhanced curriculum modules to include Data Science and Data Analytics.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item hidden">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>AI Trainee</h3>
-                            <span class="date">July 2025 – Sep 2025</span>
-                        </div>
-                        <span class="company">Infosys, Bhubaneswar, Odisha</span>
-                        <ul>
-                            <li>Trained in ML model development, NLP applications, and Data Preparation.</li>
-                            <li>Collaborated using Agile methodology to build and evaluate AI models.</li>
-                            <li>Gained exposure to corporate coding standards and Deployment principles.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="skills" class="section hidden">
-    <div class="container">
-        <h2 class="section-title" data-heading="Skills">Technical Skills</h2>
-        <div class="skills-grid">
-
-            <!-- Programming Core -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-brands fa-python"></i>
-                </div>
-                <h3>Core Programming</h3>
-                <p>Python, MySQL, Data Structures, OOPs</p>
-            </div>
-
-            <!-- Python Libraries -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <h3>Python Libraries</h3>
-                <p>Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
-            </div>
-
-            <!-- Machine Learning -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <h3>Machine Learning</h3>
-                <p>Linear Regression, Logistic Regression, Decision Trees, Random Forest, SVM, KNN,Ridge, Lasso, Naive Bayes, XGBoost, Hyperparameter Tuning</p>
-            </div>
-
-            <!-- Deep Learning -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-network-wired"></i>
-                </div>
-                <h3>Deep Learning</h3>
-                <p>ANN, CNN, RNN, LSTM, GRU, TensorFlow, Keras, PyTorch, Optimizers, Loss Functions, Activation Functions</p>
-            </div>
-
-            <!-- NLP -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-language"></i>
-                </div>
-                <h3>Natural Language Processing (NLP)</h3>
-                <p>Text Preprocessing, Tokenization, Lemmatization, Stemming, NER, POS Tagging, TF-IDF, Word2Vec, GloVe</p>
-            </div>
-
-            <!-- LLM & Generative AI -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-                <h3>LLM & Generative AI</h3>
-                <p>Prompt Engineering, Google Gemini API, OpenAI API, Hugging Face Transformers, Fine-tuning, Agents, Langchain, LLM</p>
-            </div>
-
-            <!-- RAG -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <h3>Retrieval-Augmented Generation (RAG)</h3>
-                <p>LangChain, FAISS, Vector Embeddings, Document Chunking, Similarity Search</p>
-            </div>
-
-            <!-- Power BI -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <h3>Power BI</h3>
-                <p>DAX, Power Query, Data Modeling, Interactive Dashboards, ETL</p>
-            </div>
-
-            <!-- Deployment & Tools -->
-            <div class="skill-card hidden">
-                <div class="skill-icon">
-                    <i class="fa-solid fa-cloud"></i>
-                </div>
-                <h3>Deployment & Tools</h3>
-                <p>Streamlit, FastAPI, Docker, Git, GitHub, VS Code, Anaconda</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-    <section id="projects" class="section hidden">
-        <div class="container">
-            <h2 class="section-title" data-heading="Projects">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Adult Income Rate Analysis</h3>
-                        <p>Income classification using demographic data to predict earnings >$50K. End-to-end
-                            preprocessing, EDA, and evaluation of Random Forest, XGBoost, and CatBoost models.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>EDA</span>
-                            <span>Preprocessing</span> 
-                            <span>LightGBM</span>
-                            <span>Catboost</span>  
-                            <span>XGBoost</span>
-                            
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Adult_Data_Analysis" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="profile-ring-wrap">
+                        <div class="profile-ring">
+                            <div class="ring-segment r1"></div>
+                            <div class="ring-segment r2"></div>
+                            <div class="ring-segment r3"></div>
+                            <img src="Darshani img.jpg" alt="Darshanikanta Behera" class="profile-photo">
                         </div>
                     </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-head-side-virus"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mental Health Detection (NLP)</h3>
-                        <p>Text classifier detecting mental health indicators from 10k+ samples. Built pipeline with
-                            TF-IDF, NLTK, and Logistic Regression achieving 86% accuracy.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>NLP</span>
-                            <span>NLTK</span>
-                            <span>TF-IDF</span>
-                            <span>Logistic Regression</span>
+                    <div class="model-params">
+                        <div class="param-row">
+                            <span class="param-key">role</span>
+                            <span class="param-val">"Gen AI Engineer"</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Mental_Health_Detection-NLP-ML-" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        <div class="param-row">
+                            <span class="param-key">location</span>
+                            <span class="param-val">"Hyderabad, IN"</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>RAG-Based Q&A System</h3>
-                        <p>End-to-end Retrieval-Augmented Generation system using Gemini LLM, LangChain, and FAISS.
-                            Features document parsing, semantic search, and contextual responses.</p>
-                        <div class="tags">
-                            <span>LLM</span>
-                            <span>LangChain</span>
-                            <span>Gemini</span>
-                            <span>FAISS</span>
-                            <span>Embeddings</span>
+                        <div class="param-row">
+                            <span class="param-key">stack</span>
+                            <span class="param-val">["OpenAI", "LangChain"]</span>
                         </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/RAG-Retrieval-Augmented-Generation-" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                 
-                <!--Project 4 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Stock Market Prediction</h3>
-                        <p>Time-series stock price prediction using LSTM. Implemented technical indicators like Moving Averages and RSI with data preprocessing and visualization.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Data Preprocessing</span>
-                            <span>LSTM</span>
-                            <span>Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Stock_Price_Prediction" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!--Project 5 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-table"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>CSV Chat Assistant</h3>
-                        <p>Built an intelligent assistant to chat with CSV data using LangChain, enabling natural language querying over datasets.</p>
-                        <div class="tags">
-                            <span>LangChain Agents</span>
-                            <span>Python</span>
-                            <span>Streamlit</span>
-                            <span>CSV Data</span>  
-                            <span>Data Q&A</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://dataanalysisagent-hif7oryhb5m9xjtjbui5gp.streamlit.app/" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Project 6 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Netflix Power BI Dashboard</h3>
-                        <p>Interactive business intelligence dashboard analyzing Netflix data using DAX and Power Query.</p>
-                        <div class="tags">
-                            <span>Power BI</span>
-                            <span>Cleaning</span>
-                            <span>Transforming</span>
-                            <span>Modeling</span>
-                            <span>DAX</span>
-                            <span>Data Modeling</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://app.powerbi.com/view?r=eyJrIjoiY2VmOWVmY2QtN2Y0YS00M2I0LTk5NDktNjdmODUwNjVkZWI2IiwidCI6IjBmN2I4ODE4LTM0MDktNDU0OC1hZDZhLTU5ZDRlZDI5ODRmYyJ9" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Project 7 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-envelope-circle-check"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Email Spam Classifier</h3>
-                        <p>ML model to classify emails as spam or ham using NLP techniques and supervised learning algorithms.</p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Scikit-learn</span>
-                            <span>NLP</span>
-                            <span>Classification</span>
-                            <span>Streamlit</span>
-                            <span>Data Preprocessing</span> 
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Email_Classifier" class="btn-sm" target="_blank">View Project <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!--Project 8 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-robot"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Multi-Assistant AI</h3>
-                        <p>
-                            A multi-functional AI assistant capable of handling tasks like conversation, automation,
-                            document understanding, and intelligent responses using modern AI frameworks.
-                        </p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Generative AI</span>
-                            <span>Gemini API</span>
-                            <span>LangChain</span>
-                            <span>Prompt Engineering</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Multi-Assistant" class="btn-sm" target="_blank">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--Project 9 -->
-                <div class="project-card hidden">
-                    <div class="project-img">
-                        <i class="fa-solid fa-car-side"></i>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Vehicle Speed Recognition System</h3>
-                        <p>
-                            Video-based vehicle detection and speed estimation system using object detection & tracking, frame processing and speed calculation logic.
-                        </p>
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Computer Vision</span>
-                            <span>Video Processing</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Darshanikant/Vehicle_speed_Recognition" class="btn-sm" target="_blank">
-                                View Project <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                        <div class="param-row">
+                            <span class="param-key">status</span>
+                            <span class="param-val param-green">"open_to_hire"</span>
                         </div>
                     </div>
                 </div>
@@ -489,116 +178,548 @@
         </div>
     </section>
 
-    <section id="certifications" class="section hidden">
+    <!-- ABOUT -->
+    <section id="about" class="section fade-in" data-shape="helix">
         <div class="container">
-            <h2 class="section-title" data-heading="Certifications">Certifications</h2>
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 01 — ABOUT</span>
+            </div>
+            <h2 class="section-heading">About <span class="heading-accent">Me</span></h2>
+
+            <div class="about-layout">
+                <div class="about-text-col">
+                    <p class="about-p">I'm a <strong>Generative AI Engineer & Data Scientist</strong> with a passion for turning LLMs into real, production-ready systems. My day-to-day involves designing multi-agent orchestration frameworks, semantic retrieval pipelines, and autonomous decision-making workflows at Clinion.</p>
+                    <p class="about-p">I believe AI should reduce friction, not create it — every system I build is modular, explainable, and built to scale.</p>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <span class="info-key"><i class="fa-solid fa-at"></i> Email</span>
+                            <a href="mailto:darshanikanta@gmail.com" class="info-val">darshanikanta@gmail.com</a>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-key"><i class="fa-solid fa-phone-flip"></i> Phone</span>
+                            <a href="tel:+917894191488" class="info-val">+91 7894191488</a>
+                        </div>
+                        <div class="info-card">
+                            <span class="info-key"><i class="fa-solid fa-location-crosshairs"></i> Location</span>
+                            <span class="info-val">Hyderabad, Telangana</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-block">
+                        <div class="edu-label mono-sm">// EDUCATION</div>
+                        <div class="edu-row">
+                            <div class="edu-dot"></div>
+                            <div>
+                                <div class="edu-degree">B.Sc. Information Technology & Management</div>
+                                <div class="edu-place">Fakir Mohan University, Balasore · 2021–2024</div>
+                            </div>
+                        </div>
+                        <div class="edu-row">
+                            <div class="edu-dot"></div>
+                            <div>
+                                <div class="edu-degree">Intermediate (Science)</div>
+                                <div class="edu-place">Saheed Higher Secondary School · 2019–2021</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="Darshanikanta's Resume.pdf" download class="btn-glow">
+                        <span>Download Resume</span>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                    </a>
+                </div>
+
+                <!-- Developer Terminal -->
+                <div class="terminal-col">
+                    <div class="terminal tilt-card" data-tilt>
+                        <div class="terminal-titlebar">
+                            <div class="terminal-dots">
+                                <span class="td-red"></span>
+                                <span class="td-yellow"></span>
+                                <span class="td-green"></span>
+                            </div>
+                            <div class="terminal-title mono-sm">darshani@ai-node ~ zsh</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="t-output" id="terminal-output">
+                                <div class="t-line t-system">
+                                    <span class="t-time">09:15:32</span> System initialized successfully
+                                </div>
+                                <div class="t-line t-system">
+                                    Type <span class="t-cmd">help</span> for available commands.
+                                </div>
+                                <div class="t-line">&nbsp;</div>
+                            </div>
+                            <div class="t-input-row">
+                                <span class="t-prompt">
+                                    <span class="tp-user">darshani</span><span class="tp-sep">@</span><span class="tp-host">ai</span><span class="tp-path"> ~</span><span class="tp-arrow"> ❯</span>
+                                </span>
+                                <input type="text" id="terminal-input" class="t-input" autocomplete="off" spellcheck="false" placeholder="type a command...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section fade-in" data-shape="sphere">
+        <div class="container">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 02 — EXPERIENCE</span>
+            </div>
+            <h2 class="section-heading">Work <span class="heading-accent">History</span></h2>
+
+            <div class="exp-grid">
+                <div class="exp-card tilt-card" data-tilt>
+                    <div class="exp-card-top">
+                        <div class="exp-role-badge">CURRENT</div>
+                        <div class="exp-period mono-sm">Dec 2025 – Present</div>
+                    </div>
+                    <h3 class="exp-role">Generative AI Intern</h3>
+                    <div class="exp-company"><i class="fa-solid fa-building"></i> Clinion, Hyderabad</div>
+                    <ul class="exp-points">
+                        <li>Built an internal Multi-Agent QA platform using OpenAI Agents SDK for automated clinical document analysis, data extraction, and form population.</li>
+                        <li>Developed a RAG-based eCRF extraction pipeline for clinical protocols and study documents.</li>
+                        <li>Designed vector-store powered semantic retrieval workflows for large document collections.</li>
+                        <li>Implemented modular agent architectures with tool calling and autonomous decision-making.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>OpenAI SDK</span><span>RAG</span><span>Agents</span><span>FAISS</span>
+                    </div>
+                </div>
+
+                <div class="exp-card tilt-card" data-tilt>
+                    <div class="exp-card-top">
+                        <div class="exp-period mono-sm">Mar 2025 – Dec 2025</div>
+                    </div>
+                    <h3 class="exp-role">Data Science Mentor</h3>
+                    <div class="exp-company"><i class="fa-solid fa-building"></i> Naresh iTechnology, Hyderabad</div>
+                    <ul class="exp-points">
+                        <li>Mentored 50+ students across Python, Machine Learning, EDA, Power BI, and Data Visualization.</li>
+                        <li>Guided end-to-end project development and model optimization for aspiring data scientists.</li>
+                        <li>Enhanced curriculum modules incorporating latest Data Science and AI topics.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Python</span><span>ML</span><span>Power BI</span><span>EDA</span>
+                    </div>
+                </div>
+
+                <div class="exp-card tilt-card" data-tilt>
+                    <div class="exp-card-top">
+                        <div class="exp-period mono-sm">July 2025 – Sep 2025</div>
+                    </div>
+                    <h3 class="exp-role">AI Trainee</h3>
+                    <div class="exp-company"><i class="fa-solid fa-building"></i> Infosys, Bhubaneswar</div>
+                    <ul class="exp-points">
+                        <li>Trained in ML model development, NLP applications, and data preparation workflows.</li>
+                        <li>Collaborated using Agile methodology to build and evaluate AI models.</li>
+                        <li>Gained exposure to corporate coding standards and deployment principles.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>NLP</span><span>ML</span><span>Agile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-in" data-shape="matrix">
+        <div class="container">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 03 — SKILLS</span>
+            </div>
+            <h2 class="section-heading">Tech <span class="heading-accent">Arsenal</span></h2>
+
+            <div class="skills-layout">
+                <div class="skill-category">
+                    <div class="skill-cat-label mono-sm"><span class="cat-dot c-blue"></span> Gen AI & LLMs</div>
+                    <div class="skill-pills">
+                        <span>OpenAI Agents SDK</span><span>LangChain</span><span>Multi-Agent Systems</span>
+                        <span>RAG Pipelines</span><span>FAISS / Vector DB</span><span>Prompt Engineering</span>
+                        <span>Gemini API</span><span>Hugging Face</span><span>Ollama</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-label mono-sm"><span class="cat-dot c-purple"></span> ML & Data Science</div>
+                    <div class="skill-pills">
+                        <span>Scikit-Learn</span><span>TensorFlow</span><span>PyTorch</span><span>XGBoost</span>
+                        <span>LightGBM</span><span>NLTK</span><span>TF-IDF</span><span>NLP</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-label mono-sm"><span class="cat-dot c-green"></span> Data & Visualization</div>
+                    <div class="skill-pills">
+                        <span>Pandas</span><span>NumPy</span><span>Power BI</span><span>Streamlit</span>
+                        <span>Matplotlib</span><span>Seaborn</span><span>Jupyter</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-label mono-sm"><span class="cat-dot c-orange"></span> Infra & Tools</div>
+                    <div class="skill-pills">
+                        <span>Python</span><span>MySQL</span><span>FastAPI</span><span>Docker</span>
+                        <span>GitHub</span><span>VS Code</span><span>Cursor AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ML Simulator -->
+            <div class="simulator-widget fade-in">
+                <div class="sim-header">
+                    <div class="sim-title-row">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span class="sim-title mono-sm">// ML TRAINING SANDBOX</span>
+                    </div>
+                    <p class="sim-desc">Live in-browser ML training visualization. Select an algorithm and watch the decision boundary evolve in real-time.</p>
+                </div>
+                <div class="sim-body">
+                    <div class="sim-controls">
+                        <div class="sim-control-group">
+                            <label class="sim-label mono-sm">Algorithm</label>
+                            <select id="model-select" class="sim-select">
+                                <option value="neural-net">Deep Neural Network</option>
+                                <option value="xgboost">XGBoost Classifier</option>
+                                <option value="random-forest">Random Forest</option>
+                            </select>
+                        </div>
+                        <div class="sim-control-group">
+                            <label class="sim-label mono-sm">Learning Rate: <span id="lr-val">0.05</span></label>
+                            <input type="range" id="lr-slider" min="0.01" max="0.20" step="0.01" value="0.05">
+                        </div>
+                        <div class="sim-control-group">
+                            <label class="sim-label mono-sm">Epochs: <span id="epochs-val">100</span></label>
+                            <input type="range" id="epochs-slider" min="40" max="200" step="10" value="100">
+                        </div>
+                        <div class="sim-btns">
+                            <button class="btn-glow" id="btn-train"><span>Run Training</span><i class="fa-solid fa-play"></i></button>
+                            <button class="btn-outline" id="btn-reset">Reset</button>
+                        </div>
+                        <div class="sim-metrics">
+                            <div class="metric-card">
+                                <span class="m-label mono-sm">LOSS</span>
+                                <span class="m-val" id="metric-loss">—</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="m-label mono-sm">ACCURACY</span>
+                                <span class="m-val m-green" id="metric-accuracy">—</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sim-visual">
+                        <canvas id="sim-canvas" width="280" height="280"></canvas>
+                        <div class="sim-log" id="sim-console">
+                            <div class="log-line">// system ready — select parameters</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section fade-in" data-shape="sphere">
+        <div class="container">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 04 — PROJECTS</span>
+            </div>
+            <h2 class="section-heading">Featured <span class="heading-accent">Work</span></h2>
+
+            <div class="proj-filters">
+                <button class="pf-btn active" data-filter="all">All</button>
+                <button class="pf-btn" data-filter="gen-ai">Gen AI</button>
+                <button class="pf-btn" data-filter="nlp">NLP</button>
+                <button class="pf-btn" data-filter="analytics">Analytics</button>
+            </div>
+
+            <div class="proj-grid">
+                <div class="proj-card tilt-card" data-tilt data-category="gen-ai">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-solid fa-robot"></i></div>
+                        <div class="proj-badge internal"><i class="fa-solid fa-lock"></i> Internal</div>
+                    </div>
+                    <h3 class="proj-title">Multi-Agent QA Bot</h3>
+                    <p class="proj-desc">Production-grade multi-agent system using OpenAI Agents SDK for clinical document ingestion, semantic search, and automated form extraction with secure user auth.</p>
+                    <div class="proj-stack">
+                        <span>OpenAI SDK</span><span>Vector Store</span><span>Python</span>
+                    </div>
+                    <div class="proj-footer">
+                        <span class="proj-link locked"><i class="fa-solid fa-shield-halved"></i> Clinion Internal</span>
+                    </div>
+                </div>
+
+                <div class="proj-card tilt-card featured" data-tilt data-category="gen-ai">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-solid fa-dna"></i></div>
+                        <div class="proj-badge internal"><i class="fa-solid fa-lock"></i> Internal</div>
+                    </div>
+                    <h3 class="proj-title">Clinical Protocol Intelligence</h3>
+                    <p class="proj-desc">Multi-agent RAG platform that auto-converts clinical trial protocols into structured eCRF design artifacts using async pipelines and OpenAI Responses API.</p>
+                    <div class="proj-stack">
+                        <span>RAG</span><span>LLMs</span><span>Async</span><span>JSON Automation</span>
+                    </div>
+                    <div class="proj-footer">
+                        <span class="proj-link locked"><i class="fa-solid fa-shield-halved"></i> Clinion Internal</span>
+                    </div>
+                </div>
+
+                <div class="proj-card tilt-card" data-tilt data-category="nlp">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-solid fa-brain"></i></div>
+                    </div>
+                    <h3 class="proj-title">Mental Health Detection NLP</h3>
+                    <p class="proj-desc">NLP text classifier detecting mental health indicators from 10k+ samples using TF-IDF and Logistic Regression, achieving 86% accuracy.</p>
+                    <div class="proj-stack">
+                        <span>NLTK</span><span>TF-IDF</span><span>Scikit-Learn</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://github.com/Darshanikant/Mental_Health_Detection-NLP-ML-" target="_blank" class="proj-link">
+                            View Project <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proj-card tilt-card" data-tilt data-category="gen-ai">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    </div>
+                    <h3 class="proj-title">RAG Q&A System</h3>
+                    <p class="proj-desc">End-to-end Retrieval-Augmented Generation using Gemini LLM, LangChain, and FAISS. Supports PDF ingestion, chunking, and semantic question answering.</p>
+                    <div class="proj-stack">
+                        <span>LangChain</span><span>Gemini</span><span>FAISS</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://github.com/Darshanikant/RAG-Retrieval-Augmented-Generation-" target="_blank" class="proj-link">
+                            View Project <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proj-card tilt-card" data-tilt data-category="gen-ai">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-solid fa-table-cells"></i></div>
+                    </div>
+                    <h3 class="proj-title">CSV Chat Assistant</h3>
+                    <p class="proj-desc">Natural language querying over CSV datasets using LangChain Agents, pandas execution engine, and Streamlit UI. Live on Streamlit Cloud.</p>
+                    <div class="proj-stack">
+                        <span>LangChain Agents</span><span>Streamlit</span><span>Pandas</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://dataanalysisagent-hif7oryhb5m9xjtjbui5gp.streamlit.app/" target="_blank" class="proj-link">
+                            Live Demo <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="proj-card tilt-card" data-tilt data-category="analytics">
+                    <div class="proj-card-header">
+                        <div class="proj-icon"><i class="fa-brands fa-youtube"></i></div>
+                    </div>
+                    <h3 class="proj-title">Netflix Power BI Dashboard</h3>
+                    <p class="proj-desc">Interactive BI dashboard for Netflix catalog content analysis with DAX formulas, Power Query data cleaning, and advanced data modeling.</p>
+                    <div class="proj-stack">
+                        <span>Power BI</span><span>DAX</span><span>Power Query</span>
+                    </div>
+                    <div class="proj-footer">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiY2VmOWVmY2QtN2Y0YS00M2I0LTk5NDktNjdmODUwNjVkZWI2IiwidCI6IjBmN2I4ODE4LTM0MDktNDU0OC1hZDZhLTU5ZDRlZDI5ODRmYyJ9" target="_blank" class="proj-link">
+                            View Project <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section fade-in" data-shape="torus">
+        <div class="container">
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 05 — CERTIFICATIONS</span>
+            </div>
+            <h2 class="section-heading">Credentials <span class="heading-accent">&amp; Certs</span></h2>
             <div class="cert-grid">
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>Generative AI Professional</h4>
-                        <p>Oracle (2025)</p>
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">Generative AI Professional</div>
+                        <div class="cert-issuer">Oracle · 2025</div>
                     </div>
                 </div>
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>NLP for Developers</h4>
-                        <p>Infosys (2025)</p>
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">NLP for Developers</div>
+                        <div class="cert-issuer">Infosys · 2025</div>
                     </div>
                 </div>
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>Prompt Engineering & LLM</h4>
-                        <p>Infosys (2025)</p>
-                    </div>
-                </div>  
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>Full Stack Data Science & AI</h4>
-                        <p>Naresh iTechnologies (2024-2025)</p>
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">Prompt Engineering & LLM</div>
+                        <div class="cert-issuer">Infosys · 2025</div>
                     </div>
                 </div>
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>Data Science</h4>
-                        <p>Microsoft (2023)</p>
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">Full Stack Data Science & AI</div>
+                        <div class="cert-issuer">Naresh iTechnologies · 2024–25</div>
                     </div>
                 </div>
-                <div class="cert-card hidden">
-                    <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="cert-details">
-                        <h4>Python for Data Science</h4>
-                        <p>GUVI (2023)</p>
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">Data Science</div>
+                        <div class="cert-issuer">Microsoft · 2023</div>
                     </div>
                 </div>
-
+                <div class="cert-item tilt-card" data-tilt>
+                    <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-body">
+                        <div class="cert-name">Python for Data Science</div>
+                        <div class="cert-issuer">GUVI · 2023</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section id="contact" class="section bg-light hidden">
+
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-in" data-shape="torus">
         <div class="container">
-            <h2 class="section-title" data-heading="Contact">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>darshanikanta@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 xxxxxxxx88</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Hyderabad, Telangana</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="social-icon"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/Darshanikant" target="_blank" class="social-icon"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://www.instagram.com/darshanikant007/" target="_blank" class="social-icon"><i
-                                class="fa-brands fa-instagram"></i></a> 
+            <div class="section-label">
+                <span class="label-line"></span>
+                <span class="label-text mono-sm">// 06 — CONTACT</span>
+            </div>
+            <h2 class="section-heading">Let's <span class="heading-accent">Connect</span></h2>
+
+            <div class="contact-layout">
+                <div class="contact-left">
+                    <p class="contact-desc">Building the next generation of AI systems. Open to roles in Gen AI engineering, data science, and AI research. Let's talk.</p>
+                    <div class="contact-links">
+                        <a href="mailto:darshanikanta@gmail.com" class="contact-link-card">
+                            <div class="clc-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="clc-info">
+                                <span class="clc-label mono-sm">EMAIL</span>
+                                <span class="clc-val">darshanikanta@gmail.com</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
+                        </a>
+                        <a href="tel:+917894191488" class="contact-link-card">
+                            <div class="clc-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="clc-info">
+                                <span class="clc-label mono-sm">PHONE</span>
+                                <span class="clc-val">+91 7894191488</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank" class="contact-link-card">
+                            <div class="clc-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="clc-info">
+                                <span class="clc-label mono-sm">LINKEDIN</span>
+                                <span class="clc-val">in/darshanikanta</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
+                        </a>
+                        <a href="https://github.com/Darshanikant" target="_blank" class="contact-link-card">
+                            <div class="clc-icon"><i class="fa-brands fa-github"></i></div>
+                            <div class="clc-info">
+                                <span class="clc-label mono-sm">GITHUB</span>
+                                <span class="clc-val">github.com/Darshanikant</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
+                        </a>
                     </div>
                 </div>
+
                 <form class="contact-form" action="https://formspree.io/f/moverdez" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label mono-sm">Your Name</label>
+                            <input type="text" name="name" placeholder="Jane Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label mono-sm">Email</label>
+                            <input type="email" name="email" placeholder="jane@company.ai" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <label class="form-label mono-sm">Message</label>
+                        <textarea name="message" rows="5" placeholder="Let's build something intelligent together..." required></textarea>
                     </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message <i
-                            class="fa-solid fa-paper-plane"></i></button>
+                    <button type="submit" class="btn-glow full-width">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- AI CHAT WIDGET -->
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-fab" id="chat-trigger" title="Chat with AI Clone">
+            <div class="fab-ring"></div>
+            <i class="fa-solid fa-robot"></i>
+        </button>
+        <div class="chat-box" id="chat-container">
+            <div class="chat-box-header">
+                <div class="chat-identity">
+                    <div class="chat-avatar">
+                        <img src="Darshani img.jpg" alt="Darshani AI">
+                        <span class="avatar-online"></span>
+                    </div>
+                    <div class="chat-meta">
+                        <span class="chat-name">Darshani <span class="ai-tag">AI</span></span>
+                        <span class="chat-sub mono-sm">online · responds instantly</span>
+                    </div>
+                </div>
+                <button class="chat-x" id="chat-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-msg bot-msg">
+                    Hi! I'm Darshani's AI clone. Ask me anything — skills, projects, experience, or just say <strong>"download resume"</strong>.
+                </div>
+                <div class="chat-chips">
+                    <button class="chip" data-query="Who is Darshanikanta?">Who is he?</button>
+                    <button class="chip" data-query="Tell me about Clinion experience">Clinion work</button>
+                    <button class="chip" data-query="What are your AI projects?">AI Projects</button>
+                    <button class="chip" data-query="download resume">Get Resume</button>
+                </div>
+            </div>
+            <form class="chat-input-row" id="chat-form">
+                <input type="text" id="chat-input" placeholder="Ask anything…" autocomplete="off">
+                <button type="submit" class="chat-send"><i class="fa-solid fa-arrow-up"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Darshanikanta Behera. All Rights Reserved.</p>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <span class="logo-bracket">[</span>DK<span class="logo-bracket">]</span>
+                </div>
+                <div class="footer-text mono-sm">
+                    © 2026 Darshanikanta Behera · Built with WebGL, Three.js & Pure Intelligence
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/darshanikanta/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Darshanikant" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
-
-
 </html>
